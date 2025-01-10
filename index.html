@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="icon" href="./gtd.jpeg"> 
+        <title>IT GTD Miniproject</title>
+    </head>
+<body>
+
+<div id="counter-app">
+    <h1>Simple Counter App</h1>
+    <div id="count-box">Current Count: 0</div>
+    <div id="button-container">
+        <button onclick="increaseCount()">Increase</button>
+        <button onclick="decreaseCount()">Decrease</button>
+        <button onclick="resetCount()">Reset</button>
+    </div>
+    <div id="message" class="hidden">Counter cannot be less than zero!</div>
+</div>
+
+<div id="back-to-home-container">
+    <button id="back-to-home" onclick="goHome()">Back to Home</button>
+</div>
+
+<script>
+    let count = 0;
+    let flag = false;
+
+    function updateDisplay() {
+        document.getElementById('count-box').innerText = `Current Count: ${count}`;
+        const counterApp = document.getElementById('counter-app');
+        const messageElement = document.getElementById('message');
+        messageElement.classList.remove('visible'); // Hide the message
+        counterApp.style.height = "auto"; // Reset height
+
+        document.getElementById('message').classList.add('hidden'); // Hide the message
+    }
+
+    function increaseCount() {
+        if(count == 0) {
+            flag = false;
+        }
+        count++;
+        updateDisplay();
+    }
+
+    function decreaseCount() {
+        if (count > 0) {
+            count--;
+            updateDisplay();
+        } else if(flag == false) {
+            displayMessage();
+            flag = true;
+        }
+    }
+
+    function resetCount() {
+        count = 0;
+        flag = false;
+        updateDisplay();
+    }
+
+    function displayMessage() {
+        const counterApp = document.getElementById('counter-app');
+        const messageElement = document.getElementById('message');
+        
+        // Show the message
+        messageElement.classList.remove('hidden');
+        messageElement.classList.add('visible');
+    }
+</script>
+
+</body>
+</html>

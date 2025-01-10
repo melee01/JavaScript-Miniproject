@@ -1,0 +1,73 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: rgb(232, 231, 231);
+}
+
+#counter-app {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+#count-box {
+    padding: 20px;
+    margin: 20px 0;
+    font-size: 20px;
+    color: rgb(91, 91, 91);
+    text-align: center;
+    border-radius: 10px;
+    background-color: rgb(232, 231, 231);
+}
+
+#button-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    flex: 1;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: rgb(10, 126, 214);
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgb(8, 102, 173);
+    transform: scale(1.05);
+}
+
+#message {
+    margin-top: 10px;
+    color: red;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    padding: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+#message.visible {
+    opacity: 1;
+}
+
+#back-to-home-container {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
